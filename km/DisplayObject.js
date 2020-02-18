@@ -18,5 +18,7 @@ export default class DisplayObject
             KMG.context.fillStyle = this.source;
             KMG.context.fillRect(this.x, this.y, this.width, this.height);
         }
+
+        KMG.screenClear();
     }
 }
