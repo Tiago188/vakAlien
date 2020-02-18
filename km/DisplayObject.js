@@ -10,7 +10,7 @@ export default class DisplayObject
             this.image.src = this.source;
 
             this.image.onload = () => {
-                KMG.context.drawImage(this.image.src, this.x, this.y, this.width, this.height);
+                KMG.context.drawImage(this.image, this.x, this.y, this.width, this.height);
             }
         }
         else 
