@@ -1,4 +1,3 @@
-import Game from './km/Game';
-import Sprite from './km/Sprite';
+import KMG from './km/kmg';
 
-let game = new Game();
+let game = new KMG.Game();
