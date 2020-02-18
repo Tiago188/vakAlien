@@ -19,6 +19,11 @@ class KMG
 
         return KMG.instance;
     }
+
+    screenClear () 
+    {
+        this.context.clearRect(0, 0, this.view.width, this.view.height);
+    }
 }
 
 const instance = new KMG();
