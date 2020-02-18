@@ -1,13 +1,28 @@
-export default class Sprite 
+import DisplayObject from "./DisplayObject.js";
+
+export default class Sprite extends DisplayObject
 {
-    Sprite ( width, height, color, x, y ) 
+    constructor ( source, x = 0, y = 0, width = 10, height = 10 ) 
     {
+        super();
+
+        this.type = 'image';
         this.width = width;
         this.height = height;
+        this.source = source;
+        //this.source = '#FF0000';
         this.x = x;
         this.y = y;
-        ctx = myGameArea.context;
-        ctx.fillStyle = color;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+
+    change ( source ) 
+    {
+        this.image.src = source;
+        this.render();
+    }
+
+    update () 
+    {
+        //
     }
 }
