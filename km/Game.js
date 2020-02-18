@@ -7,11 +7,6 @@ export default class Game
         this.stage = new Container();
     }
 
-    screenClear () 
-    {
-        this.context.clearRect(0, 0, this.view.width, this.view.height);
-    }
-
     addScene () 
     {
         //
