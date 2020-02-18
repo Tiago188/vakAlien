@@ -1,11 +1,13 @@
-export default Container 
+export default class Container 
 {
-    Container () 
+    constructor () 
     {
         this.children = [];
     }
 
-    addChild ( child ) {
+    addChild ( child ) 
+    {
         this.children.push( child );
+        child.render();
     }
 }
