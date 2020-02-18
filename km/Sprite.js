@@ -17,7 +17,7 @@ export default class Sprite extends DisplayObject
 
     change ( source ) 
     {
-        this.image.src = source;
+        this.source = source;
         this.render();
     }
 
