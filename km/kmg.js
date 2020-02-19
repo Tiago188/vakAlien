@@ -1,5 +1,6 @@
 import Game from './Game.js';
 import Sprite from './Sprite.js';
+import Scene from './Scene.js';
 
 class KMG 
 {
@@ -13,11 +14,23 @@ class KMG
         this.view.width = 480;
         this.view.height = 270;
         this.context = this.view.getContext('2d');
+        //this.ObjectsRenders = [];
 
         this.Game = Game;
+        this.Scene = Scene;
         this.Sprite = Sprite;
 
         return KMG.instance;
+    }
+
+    render () 
+    {console.log(this, this.Game, this.Game.stage);
+    
+        const ObjectsRenders = this.Game.stage.children;
+        this.screenClear();
+    
+        for ( const i in ObjectsRenders ) 
+            ObjectsRenders[i].render();
     }
 
     screenClear () 
