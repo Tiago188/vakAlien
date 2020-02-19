@@ -16,4 +16,13 @@ export default class Game
     {
         //
     }
+
+    render () 
+    {
+        const ObjectsRenders = this.stage.children;
+        this.screenClear();
+    
+        for ( const i in ObjectsRenders ) 
+            ObjectsRenders[i].render();
+    }
 }
