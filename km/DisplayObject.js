@@ -1,24 +1,46 @@
 import KMG from "./kmg.js";
 
-export default class DisplayObject 
+export default class DisplayObject extends Image
 {
+    constructor () 
+    {
+        super();
+
+        this._x = this.x;
+        this._y = this.y;
+    }
+
     render () 
     {
-        if (this.type == 'image') 
-        {
-            this.image = new Image();
-            this.image.src = this.source;
+        KMG.render();
 
-            this.image.onload = () => {
-                KMG.context.drawImage(this.image, this.x, this.y, this.width, this.height);
-            }
-        }
-        else 
-        {
-            KMG.context.fillStyle = this.source;
-            KMG.context.fillRect(this.x, this.y, this.width, this.height);
-        }
+        this.src = this.source;
 
-        KMG.screenClear();
+        this.onload = () => 
+            KMG.context.drawImage(this, this._x, this._y, this.width, this.height);
+
+        //KMG.screenClear();
+    }
+
+    get x () 
+    {
+        return this._x;
+    }
+
+    set x ( value ) 
+    {
+        this._x = value;
+        this.render();
+    }
+
+    get y () 
+    {
+        return this._y;
+    }
+
+    set y ( value ) 
+    {
+        this._y = value;
+        this.render();
     }
 }
