@@ -1,0 +1,12 @@
+if (typeof source === 'string')
+    {
+        // search for file extension: period, 3-4 chars, then ?, # or EOL
+        const result = (/\.(\w{3,4})(?:$|\?|#)/i).exec(source);
+        if (result)
+        {
+            extension = result[1].toLowerCase();
+        }
+    }
+
+    if ( !( item instanceof HTMLImageElement ) )
+            {
