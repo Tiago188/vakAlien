@@ -1,24 +1,29 @@
-import DisplayObject from "./DisplayObject.js";
+import Container from "./Container.js";
 
-export default class Sprite extends DisplayObject
+export default class Sprite extends Container 
 {
-    constructor ( source, x = 0, y = 0, width = 10, height = 10 ) 
+    constructor ( source, x, y, width, height ) 
     {
         super();
 
-        this.type = 'image';
-        this.width = width;
-        this.height = height;
-        this.source = source;
-        //this.source = '#FF0000';
+        this.addChild(source, true);
+
         this.x = x;
         this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    from ( source ) 
+    {
+        this.change (source);
+        this.onload = () => this.render();
     }
 
     change ( source ) 
     {
-        this.source = source;
-        this.render();
+        this.children = [];
+        this.addChild(source);
     }
 
     update () 
