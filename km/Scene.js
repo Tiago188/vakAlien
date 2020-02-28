@@ -9,7 +9,6 @@ export default class Scene extends Container
         super();
 
         const background = new Sprite(source, 0, 0, KMG.view.width, KMG.view.height);
-        this.addChild(background);
-        console.log('This is Scene!');
+        this.addChild(background, true);
     }
 }
