@@ -1,6 +1,7 @@
 import Game from './Game.js';
 import Sprite from './Sprite.js';
 import Scene from './Scene.js';
+import Resources from './Resources.js';
 
 class KMG 
 {
@@ -10,21 +11,23 @@ class KMG
             KMG.instance = this;
 
         //this.view = document.createElement('game_screen');
-        this.view = document.getElementById('game_screen');
+        this.view = document.getElementById('game_layer');
         this.view.width = 480;
-        this.view.height = 270;
-        this.context = this.view.getContext('2d');
+        this.view.height = 320;
+        this.context = this.view.getContext('2d', { alpha: false });
         //this.ObjectsRenders = [];
 
         this.Game = Game;
         this.Scene = Scene;
         this.Sprite = Sprite;
+        this.Resources = Resources;
 
         return KMG.instance;
     }
 
+    /*
     render () 
-    {console.log(this, this.Game, this.Game.stage);
+    {
     
         const ObjectsRenders = this.Game.stage.children;
         this.screenClear();
@@ -32,6 +35,7 @@ class KMG
         for ( const i in ObjectsRenders ) 
             ObjectsRenders[i].render();
     }
+    */
 
     screenClear () 
     {
