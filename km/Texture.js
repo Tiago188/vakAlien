@@ -20,33 +20,14 @@ export default class Texture extends Image
 
     render () 
     {
-        console.log('RENDER DISPLAY');
-       
         KMG.context.drawImage(this, this._x, this._y, this.width, this.height);
-
-        //KMG.screenClear();
     }
 
-    get x () 
-    {
-        return this._x;
-    }
+    get x () { return this._x; }
 
-    set x ( value ) 
-    {
-        this._x = value;
-        
-        //this.render();
-    }
+    set x ( value ) { this._x = value; }
 
-    get y () 
-    {
-        return this._y;
-    }
+    get y () { return this._y; }
 
-    set y ( value ) 
-    {
-        this._y = value;
-        //this.render();
-    }
+    set y ( value ) { this._y = value; }
 }
